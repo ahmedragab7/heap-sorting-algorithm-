@@ -43,14 +43,30 @@ arr[s]=temp;
    myswap(arr,0,y-1);
 
    }
+
    }
 
-   int arr[]={6,23,1,3,49,2};
+
+   void publesort(int arr[],int n){
+   int check=0;
+   while(check==0){
+   check=1;
+   for(int i=n-1;i>=1;--i){
+   if(arr[i]<arr[i-1]){
+   myswap(arr,i-1,i);
+   check=0;}
+   }
+   }
+   }
+
+
+   int arr[]={6,23,1,70,3,49,2,0};
    printf("the origin array is:  ");
-   printarray(arr,6);
-   heapsort(arr,6);
+   printarray(arr,8);
+   publesort(arr,8);
+   //heapsort(arr,6);
    printf("\n after heap sorting: ");
-   printarray(arr,6);
+   printarray(arr,8);
 
     return 0;
 }
